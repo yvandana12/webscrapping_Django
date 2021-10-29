@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <title></title>
+    <style>
+      table{
+        table-layout:fixed;
+      }
+      td{
+        font-size: 15px;
+      }
+      *{
+        word-wrap: break-word;
+      }
+      {% comment %} *text-clip-1{
+        display: -webkit-box;
+        -webkit-line-clamp:var(--line-clam,1);
+        -web-box-orient:vertical;
+        word-break: var(--word-break,'none');
+        overflow: hidden;
+      } {% endcomment %}
+    </style>
+  </head>
+<body>
+  <h3>Report</h3>
+  <table class='table' border='1' cellpadding = "7" cellspacing = "5" width = "100%" height="100%" style='font-family: "Arial" , sans-serif ; font-size:100% ' >
+    <thead>
+      <tr>
+        <th scope='col' width='5%'>S.No.</th>
+        <th scope='col' width='30%'></th>
+        <th scope='col'></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{1}}</th>
+        <td>Company Name </td>
+        <td>{{CompanyName}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{2}}</th>
+        <td>Summary </td>
+        <td>{{Summary}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{3}}</th>
+        <td>Company House Number </td>
+        <td>{{CompanyHouseNumber}}</td>
+      </tr>
+        <tr>
+        <th scope="row">{{4}}</th>
+        <td>Company Status </td>
+        <td>{{CompanyStatus}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{5}}</th>
+        <td>Company Financial Status </td>
+        <td>{{CompanyFinancialStatus}}</td>
+      </tr>
+      <tr class='clickable-row' data-href={{Url}}>
+        <th scope="row">{{6}}</th>
+        <td>Url </td>
+        <td>{{Url}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{7}}</th>
+        <td>Types of Products </td>
+        <td>{{TypesofProducts}}</td>
+      </tr>
+            <tr>
+        <th scope="row">{{8}}</th>
+        <td>Types of Services </td>
+        <td>{{TypesofServices}}</td>
+      </tr>
+            <tr>
+        <th scope="row">{{9}}</th>
+        <td>Industry </td>
+        <td>{{Industry}}</td>
+      </tr>
+      <tr class='clickable-row' data-href={{RecentNews}}>
+        <th scope="row">{{10}}</th>
+        <td>Recent News </td>
+        <td class="text-clip-1"><span>{{RecentNews}}</span></td>
+      </tr>
+      <tr class='clickable-row' data-href={{SocialMediaHandle}}>
+        <th scope="row">{{11}}</th>
+        <td>Social Media Handle </td>
+        <td font-size='10px'>{{SocialMediaHandle}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{12}}</th>
+        <td>Quality Certifications </td>
+        <td>{{QualityCertifications}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{13}}</th>
+        <td>Customers </td>
+        <td>{{Customers}}</td>
+      </tr>
+     
+    </tbody>
+</table> 
+</body>
+</html>
