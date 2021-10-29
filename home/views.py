@@ -201,7 +201,7 @@ def get_html_content(company_url):
 
     df = pd.DataFrame(dict) 
     df.to_json("company_1.json", orient="records")
-    #mongodb_store()
+    mongodb_store()
     return dict
   except:
     return "Error Occured!"
@@ -327,7 +327,7 @@ def get_html_content2(company_url):
     df.to_json("company_2.json", orient="records")
 
     #storing data to database MongoDB
-    #mongodb_store2()
+    mongodb_store2()
 
     #returning dictionary 
     return dict
