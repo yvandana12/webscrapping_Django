@@ -70,14 +70,11 @@ def mongodb_store():
 
 #storing json file company 2 to mongoDB
 def mongodb_store2():
-  print("Here")
   import pymongo
   from pymongo import MongoClient
   import json
   client=MongoClient('mongodb+srv://admin:admin@cluster0.zu2xt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
-  print(client)
   db=client['companies_data']
-  print(db)
   collection=db['FSG_tools_and_die']
   with open('company_2.json') as file:
     file_data=json.load(file)
@@ -482,10 +479,8 @@ def index(request):
     print(company_url)
     data=get_answers(company_url)
     if(data=="Error Occured!"):
-      print(data)#print error
       return render(request,'index.html')#render index.html again
     else:
       return render_pdf_view(request,data)
-      #return render(request,'index.html')
   else:
     return render(request,'index.html')
