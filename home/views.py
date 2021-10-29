@@ -52,7 +52,7 @@ def mongodb_store():
   import pymongo
   from pymongo import MongoClient
   import json
-  client=MongoClient('mongodb://127.0.0.1:27017')
+  client=MongoClient('mongodb+srv://admin:admin@cluster0.zu2xt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
   db=client['companies_data']
   collection=db['contract_engineers']
   with open('company_1.json') as file:
@@ -64,7 +64,7 @@ def mongodb_store2():
   import pymongo
   from pymongo import MongoClient
   import json
-  client=MongoClient('mongodb://127.0.0.1:27017')
+  client=MongoClient('mongodb+srv://admin:admin@cluster0.zu2xt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
   db=client['companies_data']
   collection=db['FSG_tools_and_die']
   with open('company_2.json') as file:
