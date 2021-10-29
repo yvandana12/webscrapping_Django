@@ -1,3 +1,4 @@
+#from sys import tracebacklimit
 from django.shortcuts import render, HttpResponse
 
 
@@ -49,23 +50,34 @@ def get_data_from_uk(houseno):
 
 #storing json file of company 1 to mongoDB
 def mongodb_store():
+  
+  print("here")
   import pymongo
   from pymongo import MongoClient
   import json
-  client=MongoClient('mongodb+srv://admin:admin@cluster0.zu2xt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+  try:
+    client = pymongo.MongoClient("mongodb+srv://admin:admin@cluster0.zu2xt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+  except Exception as e:
+    print(e)
+
+  print("client here",client)
   db=client['companies_data']
   collection=db['contract_engineers']
   with open('company_1.json') as file:
     file_data=json.load(file)
   collection.insert_many(file_data)
 
+
 #storing json file company 2 to mongoDB
 def mongodb_store2():
+  print("Here")
   import pymongo
   from pymongo import MongoClient
   import json
   client=MongoClient('mongodb+srv://admin:admin@cluster0.zu2xt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
-  db=client['companies_data']
+  print(client)
+  db=client['myFirstDatabase']
+  print(db)
   collection=db['FSG_tools_and_die']
   with open('company_2.json') as file:
     file_data=json.load(file)
