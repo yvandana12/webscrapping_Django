@@ -76,7 +76,7 @@ def mongodb_store2():
   import json
   client=MongoClient('mongodb+srv://admin:admin@cluster0.zu2xt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
   print(client)
-  db=client['myFirstDatabase']
+  db=client['companies_data']
   print(db)
   collection=db['FSG_tools_and_die']
   with open('company_2.json') as file:
